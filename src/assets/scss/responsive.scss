@@ -1,0 +1,74 @@
+@media (min-width: 320px) and (max-width: 520px) {
+    /********** Utlities ***************/
+    .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    /********** Header **************/
+    .Header {
+        .container-fluid {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .top_menu {
+            padding: 0;
+            justify-content: space-around;
+            li {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+        .navbar {
+            .navbar-brand {
+                img {
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+    /********** Banner **************/
+    .banner {
+        .banner_wrap {
+            height: 250px;
+        }
+    }
+
+    /************* about_us *********/
+    .about_us {
+        img {
+            width: 200px;
+            display: block;
+            margin: auto;
+        }
+        .abt_content {
+            text-align: center;
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    /**************** All Product ****************/
+    .all_product {
+        .product_cards {
+            .img_wraped {
+                height: 150px;
+                overflow: hidden;
+            }
+        }
+    }
+    .product_details {
+        .product_thumb {
+            height: 250px;
+        }
+    }
+    /***************** .footer **************/
+    .footer {
+        padding: 5em 0px 1em;
+        .footer_head {
+            margin-top: 20px;
+        }
+    }
+}
