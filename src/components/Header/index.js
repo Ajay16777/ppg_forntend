@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Avatar } from "antd";
+import { Dropdown } from "react-bootstrap";
 import { NavLink as NavLinkRRD } from "react-router-dom";
 import {
   Col,
@@ -53,7 +54,7 @@ const Header = ({ userdata }) => {
   }, [mounted, token]);
   return (
     <div className="Header">
-      <div className="top_bar">
+      {/* <div className="top_bar">
         <>
           <Row>
             <Col lg="6"></Col>
@@ -74,7 +75,7 @@ const Header = ({ userdata }) => {
             </Col>
           </Row>
         </>
-      </div>
+      </div> */}
       <Navbar color="light" expand="md" light>
         <NavbarBrand to="/" tag={NavLinkRRD}>
           <img
@@ -92,12 +93,28 @@ const Header = ({ userdata }) => {
         <Collapse navbar isOpen={isOpen}>
           <Nav className="ml-auto" navbar>
             <NavItem>
+              <NavLink to="/STDH" exact tag={NavLinkRRD} activeClassName="active">
+              <Dropdown>
+                <Dropdown.Toggle variant="white" id="dropdown-basic">
+                   Sanatan Dharma
+                   </Dropdown.Toggle>
+
+                 <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Pooja Path</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Vedh</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Stotra</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+
+              </NavLink>
+            </NavItem>
+          <NavItem>
               <NavLink to="/" exact tag={NavLinkRRD} activeClassName="active">
-                Home
+              Home
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/about" tag={NavLinkRRD} activeClassName="active">
+            <NavLink to="/about" exact tag={NavLinkRRD} activeClassName="active">
                 About
               </NavLink>
             </NavItem>

@@ -70,7 +70,7 @@ const Footer = (props) => (
                   </a>
                 </li>
                 <li>
-                  <a href="#!">
+                  <a href="/ContactUS">
                     <i className="lnr lnr-chevron-right" /> Contact us
                   </a>
                 </li>

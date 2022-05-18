@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loader from "./components/loader";
 import Cart from "./pages/Cart";
 import CheckOut from "./pages/CheckOut";
+import About from "./pages/About";
+import SanatanDharma from "./pages/SanatanDharama";
+import ContactUS from "./pages/ContactUs";
 import AllOrder from "./pages/user/AllOrders";
 import WishList from "./pages/Wishlist";
 
@@ -64,6 +67,9 @@ const App = () => {
             />
             <Route path="/profile" render={(props) => <Profile {...props} />} />
             <Route path="/orders" render={(props) => <AllOrder {...props} />} />
+            <Route path="/about" render={(props) => <About {...props} />} />
+            <Route path="/STDH" render={(props) => <SanatanDharma {...props} />} />
+            <Route path="/ContactUS" render={(props) => <ContactUS {...props} />} />
             <Route
               path="/checkout/:id"
               render={(props) => <CheckOut {...props} />}
