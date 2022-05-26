@@ -143,6 +143,26 @@ const ProductDetails = (props) => {
       console.log(e);
     }
   };
+  const BuyNow = async () => {
+    try {
+      const Data = {
+        user: userdata._id,
+        product: id,
+        amount: ~~price,
+        quantity,
+        total_amount: ~~price * quantity,
+        status: 1,
+        variant_data: JSON.stringify(variantData),
+      };
+      const res = await Dataservices.CartCreate(queryString.stringify(Data));
+      if (res.data.status_code === 200) {
+        message.success(res.data.message);
+        history.push("/buynow");
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <WrapContainer>
       <HeaderBreadcrumb title="Product details" />
@@ -231,7 +251,7 @@ const ProductDetails = (props) => {
                   >
                     Add to Cart
                   </Button>
-                  <Button color="amber" className="btn-rounded shadow">
+                  <Button color="amber" className="btn-rounded shadow" onClick={BuyNow}>
                     Buy Now
                   </Button>
                 </div>

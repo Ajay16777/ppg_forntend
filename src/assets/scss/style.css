@@ -124,7 +124,7 @@ body {
 
 .Header .navbar .navbar-nav .nav-item a {
   font-weight: 500;
-  margin: auto 10px;
+  /* margin: auto 10px; */
   text-transform: capitalize;
 }
 
@@ -164,7 +164,7 @@ body {
 }
 
 .banner .banner_wrap {
-  height: 650px;
+  height: 500px;
   overflow: hidden;
 }
 
@@ -185,6 +185,70 @@ body {
   z-index: 99999999;
   
 }
+/****************** buynow ***********************/
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
 /****************** about_us ***********************/
 .about_us {
   padding: 3em 0;
@@ -326,7 +390,22 @@ ul{
     text-align: left;
   }
 }
-
+/****************** Buyer ***********************/
+.Buyer form button, .Buyer form input, .Buyer form textarea{
+  width:100%;
+  padding:10px;
+  border:0.5px solid #000;
+}
+.Buyer form button{
+  background:#fff7ed;
+  border:0;
+  text-transform: uppercase;
+}
+.Buyer form button:hover,.Buyer form button:focus{
+  background:#e9963e;
+  color:#000;
+  outline:0;
+}
 /****************** all_Cart ***********************/
 .cart_details {
   background-color: #fafafa;
@@ -726,6 +805,15 @@ ul{
 .product_details .more_desc .ant-tabs-nav-list .ant-tabs-ink-bar {
   background: #e9963e;
 }
+/************** poojapathtable **************************/
+.tableinner{
+background-color: wheat;
+  font-size: 20px;
+  border: 1px solid black;
+}
+.tablehead{
+  background-color: #e9963e;
+}
 
 /************** profile **************************/
 .profile {
@@ -872,8 +960,8 @@ ul{
 
 .footer .footer_wrap .newsletter_form .content_form .form_action button {
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -884,7 +972,7 @@ ul{
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .footer .footer_wrap .newsletter_form .content_form .form_action button i {

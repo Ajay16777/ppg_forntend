@@ -40,7 +40,7 @@ const ContactUS = (props) => {
           <div class="company-info">
         <ul>
           <li><p class="fa fa-road"></p> Head office Jaipur , 2nd Branch Bhadra , India</li>
-          <li><p class="fa fa-phone"></p> 8385842313</li>
+          <li><p class="fa fa-phone"></p> +91 8385842313</li>
           <li><p class="fa fa-envelope"></p> info@pujaypanditg.com </li>
         </ul>
       </div>

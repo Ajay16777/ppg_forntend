@@ -11,10 +11,12 @@ const WrapContainer = ({ children }) => {
     const data = token;
     if (token) {
       setuserData(JSON.parse(data));
+      console.log(userdata);
     }
     return;
   }, []);
   const user = userdata && userdata.data;
+  console.log(user);
   return (
     <main>
       <Header userdata={user} />
