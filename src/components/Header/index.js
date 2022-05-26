@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Avatar } from "antd";
+import { Dropdown } from "react-bootstrap";
 import { NavLink as NavLinkRRD } from "react-router-dom";
 import {
   Col,
@@ -14,7 +15,7 @@ import {
   NavItem,
   NavLink,
   Row,
-  UncontrolledDropdown,
+  UncontrolledDropdown
 } from "reactstrap";
 // APi
 import Dataservices from "../../services/requestApi";
@@ -28,13 +29,14 @@ const Header = ({ userdata }) => {
   const [wishCount, setWishCount] = useState(0);
   const user = userdata && userdata;
   const token = sessionStorage.getItem("Authtoken");
+  // console.log(user)
   useEffect(() => {
     const getData = async () => {
       try {
         if (token) {
           const [wishRes, Cartres] = await Promise.all([
             Dataservices.GetWishlistAll(),
-            Dataservices.GetCartAll(),
+            Dataservices.GetCartAll()
           ]);
           if (mounted) {
             setWishCount(wishRes.data.data.length);
@@ -53,7 +55,7 @@ const Header = ({ userdata }) => {
   }, [mounted, token]);
   return (
     <div className="Header">
-      <div className="top_bar">
+      {/* <div className="top_bar">
         <>
           <Row>
             <Col lg="6"></Col>
@@ -74,7 +76,7 @@ const Header = ({ userdata }) => {
             </Col>
           </Row>
         </>
-      </div>
+      </div> */}
       <Navbar color="light" expand="md" light>
         <NavbarBrand to="/" tag={NavLinkRRD}>
           <img
@@ -83,7 +85,7 @@ const Header = ({ userdata }) => {
               width: "200px",
               position: "absolute",
               top: "5px",
-              zIndex: "9",
+              zIndex: "9"
             }}
             alt="Logo"
           />
@@ -92,12 +94,73 @@ const Header = ({ userdata }) => {
         <Collapse navbar isOpen={isOpen}>
           <Nav className="ml-auto" navbar>
             <NavItem>
+              <NavLink
+                to="/STDH"
+                exact
+                tag={NavLinkRRD}
+                activeClassName="active"
+              >
+                <Dropdown>
+                  <Dropdown.Toggle variant="white" id="dropdown-basic">
+                    Sanatan Dharma
+                  </Dropdown.Toggle>
+                   <Dropdown.Menu>
+                    <NavItem>
+                      <Dropdown.Item>
+                        {" "}
+                        <NavLink
+                          to="/PoojaPath"
+                          exact
+                          tag={NavLinkRRD}
+                          activeClassName="active"
+                        >
+                          Pooja Path
+                        </NavLink>
+                      </Dropdown.Item>
+                    </NavItem>
+
+                    <NavItem>
+                      <Dropdown.Item>
+                        {" "}
+                        <NavLink
+                          to="/Vedh"
+                          exact
+                          tag={NavLinkRRD}
+                          activeClassName="active"
+                        >
+                          Vedh
+                        </NavLink>
+                      </Dropdown.Item>
+                    </NavItem>
+                    <NavItem>
+                      <Dropdown.Item>
+                        {" "}
+                        <NavLink
+                          to="/Stotra"
+                          exact
+                          tag={NavLinkRRD}
+                          activeClassName="active"
+                        >
+                          Stotra
+                        </NavLink>
+                      </Dropdown.Item>
+                    </NavItem>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink to="/" exact tag={NavLinkRRD} activeClassName="active">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/about" tag={NavLinkRRD} activeClassName="active">
+              <NavLink
+                to="/about"
+                exact
+                tag={NavLinkRRD}
+                activeClassName="active"
+              >
                 About
               </NavLink>
             </NavItem>

@@ -5,9 +5,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loader from "./components/loader";
 import Cart from "./pages/Cart";
 import CheckOut from "./pages/CheckOut";
+import About from "./pages/About";
+import SanatanDharma from "./pages/SanatanDharama";
+import ContactUS from "./pages/ContactUs";
 import AllOrder from "./pages/user/AllOrders";
 import WishList from "./pages/Wishlist";
-
+import PoojaPath from "./pages/PoojaPath";
+import Vedh from "./pages/vedh";
+import Stotra from "./pages/stotra"
+import BuyNow from './pages/BuyNow';
 const HomePage = lazy(() => import("./pages/Home"));
 const AllProduct = lazy(() => import("./pages/ProductAll"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
@@ -64,6 +70,13 @@ const App = () => {
             />
             <Route path="/profile" render={(props) => <Profile {...props} />} />
             <Route path="/orders" render={(props) => <AllOrder {...props} />} />
+            <Route path="/about" render={(props) => <About {...props} />} />
+            <Route path="/STDH" render={(props) => <SanatanDharma {...props} />} />
+            <Route path="/ContactUS" render={(props) => <ContactUS {...props} />} />
+            <Route path="/PoojaPath" render={(props) => <PoojaPath {...props} />} />
+            <Route path="/buynow" render={(props) => <BuyNow {...props} />} />
+            <Route path="/Vedh" render={(props) => <Vedh {...props} />} />
+            <Route path="/Stotra" render={(props) => <Stotra {...props} />} />
             <Route
               path="/checkout/:id"
               render={(props) => <CheckOut {...props} />}

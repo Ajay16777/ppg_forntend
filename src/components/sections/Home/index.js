@@ -46,7 +46,7 @@ const HomeSections = (props) => {
   return (
     <>
       <Banner data={banner} />
-      <AboutSection />
+      <AboutSection  data={AboutSection}/>
       <AllProduct data={product} slider={true} wishlist={true} />
       <AllPooja data={pooja} slider={true} />
       <AllArticles data={articles} slider={true} />

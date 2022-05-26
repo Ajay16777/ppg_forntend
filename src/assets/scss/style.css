@@ -124,7 +124,7 @@ body {
 
 .Header .navbar .navbar-nav .nav-item a {
   font-weight: 500;
-  margin: auto 10px;
+  /* margin: auto 10px; */
   text-transform: capitalize;
 }
 
@@ -164,7 +164,7 @@ body {
 }
 
 .banner .banner_wrap {
-  height: 650px;
+  height: 500px;
   overflow: hidden;
 }
 
@@ -173,6 +173,80 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.ashis {
+  padding: 0;
+  background-image: url("https://images.theconversation.com/files/194855/original/file-20171115-19836-uy2yzs.jpg?ixlib=rb-1.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  z-index: 99999999;
+  
+}
+/****************** buynow ***********************/
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
 }
 
 /****************** about_us ***********************/
@@ -184,16 +258,6 @@ body {
   background-position: top;
   position: relative;
 }
-
-.about_us:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff4d;
-}
-
 .about_us .container {
   position: relative;
   z-index: 1;
@@ -220,7 +284,128 @@ body {
   color: #000;
   font-weight: 400;
 }
+/****************** contact_us ***********************/
+.Contact{
+  background-color:#fff7ed ;
+}
+.container{
+  max-width:1170px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
 
+ul{
+  list-style: none;
+  padding:0;
+}
+
+.brand{
+  text-align: center;
+}
+
+.brand span{
+  color:#fff;
+}
+
+.wrapper{
+  box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+}
+
+.wrapper > *{
+  padding: 1em;
+}
+.company-info{
+  background:#e9963e;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.contact{
+  background:#0000;
+}
+.infoContainer{
+  text-align: center;
+    font-size: 30px;
+    margin: 30px;
+}
+
+/* FORM STYLES */
+.contact form{
+  background-color: #fff7ed !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:20px;
+}
+
+.contact form p{
+  margin:0;
+}
+
+.contact form .full{
+  grid-column: 1 / 3;
+}
+
+.contact form button, .contact form input, .contact form textarea{
+  width:100%;
+  padding:1em;
+  border:0.5px solid #000;
+}
+
+.contact form button{
+  background:#efefef;
+  border:0;
+  text-transform: uppercase;
+}
+
+.contact form button:hover,.contact form button:focus{
+  background:#e9963e;
+  color:#000;
+  outline:0;
+}
+
+.alert{
+  text-align: center;
+  padding:10px;
+  background:#e9963e;
+  color:#000;
+  margin-bottom:10px;
+  display:none;
+}
+
+/* LARGE SCREENS */
+@media(min-width:700px){
+  .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrapper > *{
+    padding:2em;
+  }
+
+  .company-info h3, .company-info ul, .brand{
+    text-align: left;
+  }
+}
+/****************** Buyer ***********************/
+.Buyer form button, .Buyer form input, .Buyer form textarea{
+  width:100%;
+  padding:10px;
+  border:0.5px solid #000;
+}
+.Buyer form button{
+  background:#fff7ed;
+  border:0;
+  text-transform: uppercase;
+}
+.Buyer form button:hover,.Buyer form button:focus{
+  background:#e9963e;
+  color:#000;
+  outline:0;
+}
 /****************** all_Cart ***********************/
 .cart_details {
   background-color: #fafafa;
@@ -620,6 +805,15 @@ body {
 .product_details .more_desc .ant-tabs-nav-list .ant-tabs-ink-bar {
   background: #e9963e;
 }
+/************** poojapathtable **************************/
+.tableinner{
+background-color: wheat;
+  font-size: 20px;
+  border: 1px solid black;
+}
+.tablehead{
+  background-color: #e9963e;
+}
 
 /************** profile **************************/
 .profile {
@@ -766,8 +960,8 @@ body {
 
 .footer .footer_wrap .newsletter_form .content_form .form_action button {
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -778,7 +972,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .footer .footer_wrap .newsletter_form .content_form .form_action button i {
