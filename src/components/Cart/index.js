@@ -64,7 +64,7 @@ const CartAll = ({ data }) => {
                 <span className="ml-3 text-dark"> ₹ {total_amount}</span>
               </h5>
             </div>
-            <Button color="amber" block size="lg" className="text-white">
+            <Button color="amber" block size="lg" className="text-white" >
               Place Order
             </Button>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import {BASEURL} from '../../services/http-common';
 
 //bootstrap
 import { Button, Card, CardBody, CardTitle } from "reactstrap";
@@ -40,13 +41,13 @@ const ProductCards = ({ data, wishlist }) => {
     e.preventDefault();
     try {
       const Data = {
-        user: userdata._id,
+        user: userdata.id,
         product: id,
         status: 0,
       };
       if (isLogedin) {
         const res = await Dataservices.CartCreate(queryString.stringify(Data));
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.status_code === 200) {
           message.success(res.data.message);
           history.push("/wishlist");
@@ -58,18 +59,21 @@ const ProductCards = ({ data, wishlist }) => {
         history.push("/login");
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
+  console.log(data);
   return (
     <Card className="product_cards">
-      <div className="img_wraped">
+      <div className="img_wraped" style={{overflowX:'scroll'}}>
         <img
           className="img-fluid rounded"
-          src={data.image}
-          alt={data.title}
+          src={BASEURL.ENDPOINT_URL+data.image[0].image_link}
+          alt={BASEURL.ENDPOINT_URL+data.image[0].image_name}
           loading="lazy"
-        />
+
+          />
+          {/* {console.log(data.image)} */}
       </div>
       {wishlist && (
         <div className="wishlist">
@@ -90,8 +94,7 @@ const ProductCards = ({ data, wishlist }) => {
             className="btn-rounded"
             to={`/product/${data._id}`}
             tag={Link}
-            outline
-            color="amber"
+            outline color="amber"
           >
             Buy Product
           </Button>

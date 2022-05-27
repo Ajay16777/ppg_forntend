@@ -20,7 +20,7 @@ const ProductAll = (props) => {
         }
         // console.log(productRes);
       } catch (e) {
-        console.log(e);
+        // console.log(e);
       }
     };
     getData();

@@ -1,6 +1,6 @@
 import axios from "axios";
 export const BASEURL = {
-  ENDPOINT_URL: "http://localhost:5200/",
+  ENDPOINT_URL: "http://192.168.1.41:5200/",
 };
 const AuthToken = sessionStorage.getItem("Authtoken");
 const finalToken = JSON.parse(AuthToken);

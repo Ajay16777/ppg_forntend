@@ -24,6 +24,7 @@ import HeaderBreadcrumb from "../../components/BreadCrumb";
 // React  Router Dom
 import { Link } from "react-router-dom";
 const Register = (props) => {
+  // const [otp, setOtp] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,6 +50,10 @@ const Register = (props) => {
       console.log(e);
     }
   };
+
+  
+
+
   return (
     <WrapContainer>
       <HeaderBreadcrumb title="Register" />
@@ -104,6 +109,30 @@ const Register = (props) => {
                         placeholder="Enter Your Password"
                       />
                     </FormGroup>
+                    
+                    <FormGroup>
+                      <Label for="phone">Otp Verification</Label>
+                      <Input
+                        type="verify"
+                        name="Otp"
+                        id="otp"
+                        // value={}
+                        // onChange={(e) => auth(e.target.value)}
+                        placeholder="Enter your otp"
+                      />
+                    </FormGroup>
+                    {/* <FormGroup>
+                      <Button
+                        type="submit"
+                        color="amber"
+                        className="btn-rounded text-white"
+                        block
+                        onClick={verifyOtp}
+                      >
+                        Continue
+                      </Button>
+                    </FormGroup> */}
+                   
                     <FormGroup>
                       <Button
                         type="submit"

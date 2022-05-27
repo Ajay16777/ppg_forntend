@@ -33,9 +33,9 @@ const Login = (props) => {
 
   useEffect(() => {
     const token = sessionStorage.getItem("Authtoken");
-    if (token == null) {
+    if (token === null) {
       setIsLogedin(false);
-    } else if (token) {
+    } else if (token!==null) {
       setIsLogedin(true);
     }
   }, []);
@@ -48,6 +48,7 @@ const Login = (props) => {
       };
       const response = await Dataservices.Login(queryString.stringify(Data));
       const data = response.data;
+      // console.log(data);
       if (response.data.status_code === 400) {
         message.error(response.data.message);
       } else if (response.data.status_code === 500) {

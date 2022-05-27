@@ -42,7 +42,7 @@ const Header = ({ userdata }) => {
           }
         }
       } catch (e) {
-        console.log(e);
+        // console.log(e);
       }
     };
     getData();
@@ -51,6 +51,7 @@ const Header = ({ userdata }) => {
       setMounted(false);
     };
   }, [mounted, token]);
+  // console.log(user);
   return (
     <div className="Header">
       <div className="top_bar">

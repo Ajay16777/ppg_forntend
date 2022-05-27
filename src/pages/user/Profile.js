@@ -22,6 +22,7 @@ import WrapContainer from "../../components/container";
 import Dataservices from "../../services/requestApi";
 // import queryString from "query-string";
 const Profile = (props) => {
+  //eslint-disable-next-line
   const [userdata, setuserData] = useState([]);
   useEffect(() => {
     const getData = async () => {
@@ -37,6 +38,7 @@ const Profile = (props) => {
       getData();
     };
   }, []);
+  //eslint-disable-next-line
   const user = userdata.data;
   return (
     <WrapContainer>
