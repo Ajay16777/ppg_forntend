@@ -22,9 +22,11 @@ import WrapContainer from "../../components/container";
 import HeaderBreadcrumb from "../../components/BreadCrumb";
 
 // React  Router Dom
-import { Link } from "react-router-dom";
+import { Link, NavLink, Redirect,useHistory } from "react-router-dom";
 const Register = (props) => {
-  // const [otp, setOtp] = useState(false);
+  const history = useHistory();
+  const[view,setView]=useState(false);
+  const [token, setToken] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,16 +40,50 @@ const Register = (props) => {
         phone,
         email,
         password,
+        token,
       };
       const response = await Dataservices.Register(queryString.stringify(Data));
       const data = response.data;
+      setView(true);
       console.log(data);
-      if (response.data.token) {
-        sessionStorage.setItem("Authtoken", JSON.stringify(data));
-        window.location.reload(true);
+      if (response.data.status_code === 200) {
+        alert("user already exist");
+      }
+      else if(response.data.status_code===400)
+      {
+        alert("enter valid details");
       }
     } catch (e) {
       console.log(e);
+    }
+  };
+
+  const verifyData = async (e) => {
+    e.preventDefault();
+    try {
+      await (Dataservices.RegisterVerify(queryString.stringify({
+        name,
+       phone,
+       email,
+       password,
+       token,
+        }))).then((respone) => {
+          history.push("/login");
+          if(respone.data.message==="Invalid OTP"){
+            alert("Invalid OTP");
+          }
+          else if(respone.data.message==="User Registered"){
+            alert("successfull register");
+          }
+          // console.log(respone.data.status_code);
+          
+     console.log(respone);
+      });
+    } catch (e) {
+      console.log(e);
+      sessionStorage.setItem("Authtoken", JSON.stringify);
+        window.location.reload(true);
+
     }
   };
 
@@ -109,30 +145,19 @@ const Register = (props) => {
                         placeholder="Enter Your Password"
                       />
                     </FormGroup>
-                    
+                    {view && 
                     <FormGroup>
                       <Label for="phone">Otp Verification</Label>
                       <Input
                         type="verify"
                         name="Otp"
                         id="otp"
-                        // value={}
-                        // onChange={(e) => auth(e.target.value)}
+                        value={token}
+                        onChange={(e) => setToken(e.target.value)}
                         placeholder="Enter your otp"
                       />
-                    </FormGroup>
-                    {/* <FormGroup>
-                      <Button
-                        type="submit"
-                        color="amber"
-                        className="btn-rounded text-white"
-                        block
-                        onClick={verifyOtp}
-                      >
-                        Continue
-                      </Button>
-                    </FormGroup> */}
-                   
+                    </FormGroup>}
+                    {!view &&
                     <FormGroup>
                       <Button
                         type="submit"
@@ -141,9 +166,24 @@ const Register = (props) => {
                         block
                         onClick={AuthRegister}
                       >
-                        Login
+                        Continue
                       </Button>
+                    </FormGroup>}
+                      <NavLink to="/login">
+                    <FormGroup>
+                   {view &&
+                      <Button
+                        type="submit"
+                        color="amber"
+                        className="btn-rounded text-white"
+                        block
+                        onClick={verifyData}
+                      >
+                        Login
+                      </Button>}
+                     
                     </FormGroup>
+                    </NavLink>
                   </Form>
                 </CardBody>
               </Card>

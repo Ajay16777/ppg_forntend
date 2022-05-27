@@ -21,8 +21,8 @@ class DataService {
   Register(data) {
     return http.post("user/signup", data);
   }
-  RegisterOtp(data){
-    return http.post("user/verify", data);
+  RegisterVerify(data){
+    return http.post("user/verify",data);
   }
 
   // User Profile Update
