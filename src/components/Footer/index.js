@@ -45,12 +45,12 @@ const Footer = (props) => (
             <div className="footer_links">
               <ul>
                 <li>
-                  <a href="#!">
+                  <a href="/">
                     <i className="lnr lnr-chevron-right" /> Home{" "}
                   </a>
                 </li>
                 <li>
-                  <a href="#!">
+                  <a href="/about">
                     <i className="lnr lnr-chevron-right" /> About Us
                   </a>
                 </li>
@@ -60,17 +60,17 @@ const Footer = (props) => (
                   </a>
                 </li> */}
                 <li>
-                  <a href="#!">
+                  <a href="/all-pooja">
                     <i className="lnr lnr-chevron-right" /> Poja Booking
                   </a>
                 </li>
                 <li>
-                  <a href="#!">
+                  <a href="/all-article">
                     <i className="lnr lnr-chevron-right" /> Blog{" "}
                   </a>
                 </li>
                 <li>
-                  <a href="#!">
+                  <a href="/ContactUS">
                     <i className="lnr lnr-chevron-right" /> Contact us
                   </a>
                 </li>
@@ -111,7 +111,7 @@ const Footer = (props) => (
                 </li>
                 <li>
                   <div className="icons">
-                    <i className="fas fa-map-marker-alt" />
+                    <i className="fas fa-map-marker-alt" style={{width: "80px", paddingLeft: "19px",fontSize: "18px"}} />
                   </div>
                   <div className="box_content">
                     <h3>Address</h3>
